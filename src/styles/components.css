@@ -1,0 +1,201 @@
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 30px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), background-color 0.2s, border-color 0.2s, box-shadow 0.3s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn--primary {
+  background: var(--ink);
+  color: var(--night);
+}
+.btn--primary:hover:not([disabled]) {
+  transform: translateY(-2px);
+  background: var(--warm);
+  box-shadow: 4px 4px 0 #17181720;
+}
+.btn--ghost {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+.btn--ghost:hover:not([disabled]) {
+  background: #17181706;
+  border-color: var(--ink);
+}
+.btn--block {
+  width: 100%;
+}
+.btn__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.linkbtn {
+  background: none;
+  border: 0;
+  padding: 8px 4px;
+  color: var(--ash);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.linkbtn:hover {
+  color: var(--ink);
+}
+
+/* ---- Form fields ---- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ash);
+}
+.field__input {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  font-size: 16px; /* 16px stops iOS from zooming on focus */
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.field__input::placeholder {
+  color: var(--dim);
+}
+.field__input:hover {
+  border-color: var(--line-strong);
+}
+.field__input:focus-visible {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px var(--blue-soft);
+  background: var(--panel-raised);
+}
+.field__input[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+.field__msg {
+  font-size: 13px;
+  color: var(--ash);
+}
+.field__msg--error {
+  color: var(--danger);
+}
+
+/* ---- Chips ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.chip--ok {
+  border-color: #326b4255;
+  color: var(--ok);
+}
+.chip__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* ---- Toasts ---- */
+.toasts {
+  position: fixed;
+  z-index: 100;
+  left: 16px;
+  right: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(420px, 100%);
+  padding: 14px 16px;
+  background: var(--panel-raised);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  box-shadow: 4px 6px 0 #17181720;
+  animation: toast-in 0.28s var(--ease);
+}
+.toast--error {
+  border-color: rgba(255, 123, 138, 0.45);
+}
+.toast--success {
+  border-color: rgba(126, 226, 176, 0.4);
+}
+.toast__body {
+  flex: 1;
+}
+.toast__title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.toast__text {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--ash);
+}
+.toast__close {
+  background: none;
+  border: 0;
+  padding: 2px 6px;
+  color: var(--ash);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* ScrollEffects animates visible elements without hiding content in the stylesheet. */

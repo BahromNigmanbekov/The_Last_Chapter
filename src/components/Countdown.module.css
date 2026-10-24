@@ -1,0 +1,88 @@
+.root {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #faf9f4;
+  box-shadow: 4px 4px 0 #17181710;
+  overflow: hidden;
+}
+
+.unit {
+  padding: 20px 4px 16px;
+  text-align: center;
+}
+.unit + .unit {
+  border-left: 1px solid var(--line);
+}
+
+.value {
+  display: block;
+  font-size: clamp(2.2rem, 9vw, 4.2rem);
+  font-weight: 400;
+  font-family: var(--display);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  display: block;
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ash);
+  padding-left: 0.24em;
+}
+
+.seconds .value {
+  color: var(--ink);
+}
+
+.tick {
+  animation: tick 0.4s var(--ease);
+}
+@keyframes tick {
+  from {
+    opacity: 0.3;
+    transform: translateY(-5px);
+  }
+}
+
+.state {
+  padding: 30px 12px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stateTitle {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  line-height: 1.05;
+}
+.stateText {
+  margin-top: 8px;
+  color: var(--ash);
+}
+
+.compact .unit {
+  padding: 12px 2px 10px;
+}
+.compact .value {
+  font-size: clamp(1.4rem, 6vw, 2rem);
+}
+.compact .label {
+  margin-top: 6px;
+  font-size: 10px;
+}
+.compact .state {
+  padding: 18px 12px;
+}
+.compact .stateTitle {
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+}

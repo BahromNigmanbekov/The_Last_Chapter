@@ -1,0 +1,28 @@
+:root {
+  /* Notebook paper, graphite and red pen. */
+  --night: #f6f5ef;
+  --panel: #faf9f4;
+  --panel-raised: #eeece2;
+  --line: rgba(23, 24, 23, 0.15);
+  --line-strong: rgba(23, 24, 23, 0.35);
+  --ink: #171817;
+  --ash: #56574f;
+  --dim: #6d6e64;
+  --blue: #df2935;
+  --warm: #df2935;
+  --blue-soft: rgba(223, 41, 53, 0.1);
+  --ok: #326b42;
+  --danger: #bc2632;
+
+  --sans: var(--font-inter), "Apple Color Emoji", system-ui, -apple-system, "Segoe UI", Roboto, "Segoe UI Emoji", sans-serif;
+  --display: var(--font-handwriting), "Segoe Print", cursive;
+
+  --radius-xl: 10px;
+  --radius-lg: 8px;
+  --radius-md: 5px;
+  --radius-pill: 6px;
+
+  --gutter: clamp(20px, 5vw, 40px);
+  --max: 1240px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
